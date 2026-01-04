@@ -1,0 +1,191 @@
+{
+  "info": {
+    "name": "FarmInvest API",
+    "description": "REST API for FarmInvest Lite application",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "item": [
+    {
+      "name": "Get All Investments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/investments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "investments"]
+        },
+        "description": "Retrieves all investments from the database, ordered by creation date (newest first)."
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/investments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "investments"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"id\": 1,\n    \"farmer_name\": \"John Smith\",\n    \"amount\": 5000.00,\n    \"crop\": \"Wheat\",\n    \"created_at\": \"2026-01-04T10:30:00.000Z\"\n  },\n  {\n    \"id\": 2,\n    \"farmer_name\": \"Maria Garcia\",\n    \"amount\": 7500.50,\n    \"crop\": \"Corn\",\n    \"created_at\": \"2026-01-04T09:15:00.000Z\"\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Create Investment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"farmer_name\": \"John Doe\",\n  \"amount\": 5000,\n  \"crop\": \"Wheat\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/investments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "investments"]
+        },
+        "description": "Creates a new investment record. Requires farmer_name (string), amount (positive number), and crop (string)."
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"farmer_name\": \"John Doe\",\n  \"amount\": 5000,\n  \"crop\": \"Wheat\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/investments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "investments"]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": 11,\n  \"farmer_name\": \"John Doe\",\n  \"amount\": 5000.00,\n  \"crop\": \"Wheat\",\n  \"created_at\": \"2026-01-04T10:30:00.000Z\"\n}"
+        },
+        {
+          "name": "Validation Error",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"farmer_name\": \"\",\n  \"amount\": -100,\n  \"crop\": \"\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/investments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "investments"]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": \"Validation failed\",\n  \"details\": [\n    \"farmer_name is required and must be a non-empty string\",\n    \"amount is required and must be a positive number\",\n    \"crop is required and must be a non-empty string\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        },
+        "description": "Health check endpoint to verify server status."
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["health"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"ok\",\n  \"timestamp\": \"2026-01-04T10:30:00.000Z\"\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
