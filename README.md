@@ -2,7 +2,7 @@
 
 A full-stack investment tracking application for Sri Lankan farmers, built with React Native (Expo) and Express.js + MySQL.
 
-## 🌾 Overview
+## Overview
 
 FarmInvest Lite helps track agricultural investments with:
 
@@ -10,7 +10,7 @@ FarmInvest Lite helps track agricultural investments with:
 - **Sri Lankan Rupees (Rs.)** currency display
 - **Local crops**: Rice, Tea, Coconut, Cinnamon, Coffee, etc.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 polygon/
@@ -41,7 +41,7 @@ polygon/
 └── README.md                   # This file
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -81,7 +81,7 @@ npm start
 # - Scan QR code with Expo Go app
 ```
 
-## 🎯 Features
+## Features
 
 ### Backend API
 
@@ -104,7 +104,7 @@ npm start
 - ✅ **TypeScript** for type safety
 - ✅ **Unit tests** with Jest
 
-## 🔧 Technologies Used
+## Technologies Used
 
 ### Backend
 
@@ -125,7 +125,7 @@ npm start
 - Jest 29.7.0
 - React Native Testing Library 12.4.3
 
-## 📊 Database
+## Database
 
 ### Schema
 
@@ -145,7 +145,7 @@ CREATE TABLE investments (
 - Investments in Rs. (32,000 - 100,000 range)
 - Local crops: Rice, Tea, Coconut, Cinnamon, etc.
 
-## 🧪 Testing
+## Testing
 
 ### Backend API Testing
 
@@ -171,7 +171,7 @@ cd mobile
 npm test
 ```
 
-## 📱 Running the App
+## Running the App
 
 ### Web Version (Easiest)
 
@@ -187,7 +187,7 @@ npm test
 3. Scan QR code with Expo Go
 4. **Note**: If errors occur, clear Expo Go app data (Settings → Apps → Expo Go → Storage → Clear Data)
 
-## 🛠️ Configuration
+## Configuration
 
 ### Backend (.env)
 
@@ -206,7 +206,7 @@ PORT=3000
 export const API_BASE_URL = "http://localhost:3000";
 ```
 
-## ✅ Assignment Requirements
+## Assignment Requirements
 
 All requirements completed:
 
@@ -227,14 +227,14 @@ All requirements completed:
 - ✅ Unit tests with Jest
 - ✅ Complete documentation
 
-## 🔒 Security Features
+## Security Features
 
 - Parameterized SQL queries prevent SQL injection
 - Input validation on both client and server
 - Environment variables for sensitive data
 - CORS configuration for API access control
 
-## 📝 API Endpoints
+## API Endpoints
 
 ### GET /api/investments
 
@@ -279,7 +279,7 @@ Creates a new investment.
 }
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Expo App Shows Errors
 
@@ -299,11 +299,11 @@ Creates a new investment.
 - Check version: `node --version`
 - Should show v20.18.1
 
-## 📄 License
+## License
 
 MIT License - Free for educational and commercial use.
 
-## 👨‍💻 Author
+## Author
 
 Built for Polygon Holdings Private Limited technical assessment.
 
