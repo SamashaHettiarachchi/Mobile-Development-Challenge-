@@ -5,6 +5,7 @@ A full-stack investment tracking application for Sri Lankan farmers, built with 
 ## 🌾 Overview
 
 FarmInvest Lite helps track agricultural investments with:
+
 - **Sinhala language support** for farmer names
 - **Sri Lankan Rupees (Rs.)** currency display
 - **Local crops**: Rice, Tea, Coconut, Cinnamon, Coffee, etc.
@@ -43,6 +44,7 @@ polygon/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js v20.18.1 (for Expo compatibility)
 - MySQL 9.5
 - Expo Go app (for mobile testing)
@@ -82,6 +84,7 @@ npm start
 ## 🎯 Features
 
 ### Backend API
+
 - ✅ **GET /api/investments** - Fetch all investments
 - ✅ **POST /api/investments** - Create new investment
 - ✅ **MySQL database** with parameterized queries
@@ -89,6 +92,7 @@ npm start
 - ✅ **CORS enabled** for cross-origin requests
 
 ### Mobile App
+
 - ✅ **List investments** with FlatList
 - ✅ **Sinhala names** (සිරිල් පෙරේරා, කමලා විජේසිංහ, etc.)
 - ✅ **Rs. currency format** (Rs. 50,000.00)
@@ -103,24 +107,28 @@ npm start
 ## 🔧 Technologies Used
 
 ### Backend
+
 - Express.js 4.18.2
 - MySQL2 3.6.5 (with connection pooling)
 - CORS 2.8.5
 - dotenv 16.3.1
 
 ### Mobile
+
 - Expo 50.0.0
 - React Native 0.73.2
 - TypeScript 5.1.3
 - React 18.2.0
 
 ### Testing
+
 - Jest 29.7.0
 - React Native Testing Library 12.4.3
 
 ## 📊 Database
 
 ### Schema
+
 ```sql
 CREATE TABLE investments (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -132,6 +140,7 @@ CREATE TABLE investments (
 ```
 
 ### Sample Data
+
 - 10 Sri Lankan farmers with Sinhala names
 - Investments in Rs. (32,000 - 100,000 range)
 - Local crops: Rice, Tea, Coconut, Cinnamon, etc.
@@ -141,6 +150,7 @@ CREATE TABLE investments (
 ### Backend API Testing
 
 **Using cURL:**
+
 ```bash
 # Get all investments
 curl http://localhost:3000/api/investments
@@ -164,12 +174,14 @@ npm test
 ## 📱 Running the App
 
 ### Web Version (Easiest)
+
 1. Start backend: `cd backend && npm start`
 2. Start Expo: `cd mobile && npm start`
 3. Press **'w'** in the Expo terminal
 4. App opens at http://localhost:8081
 
 ### Mobile Device
+
 1. Install **Expo Go** from Play Store/App Store
 2. Start Expo: `cd mobile && npm start`
 3. Scan QR code with Expo Go
@@ -178,6 +190,7 @@ npm test
 ## 🛠️ Configuration
 
 ### Backend (.env)
+
 ```env
 DB_HOST=localhost
 DB_USER=root
@@ -188,6 +201,7 @@ PORT=3000
 ```
 
 ### Mobile (src/config.ts)
+
 ```typescript
 export const API_BASE_URL = "http://localhost:3000";
 ```
@@ -223,9 +237,11 @@ All requirements completed:
 ## 📝 API Endpoints
 
 ### GET /api/investments
+
 Returns all investments with Sinhala names and Rs. amounts.
 
 **Response:**
+
 ```json
 [
   {
@@ -239,9 +255,11 @@ Returns all investments with Sinhala names and Rs. amounts.
 ```
 
 ### POST /api/investments
+
 Creates a new investment.
 
 **Request:**
+
 ```json
 {
   "farmer_name": "කමලා විජේසිංහ",
@@ -251,6 +269,7 @@ Creates a new investment.
 ```
 
 **Response:**
+
 ```json
 {
   "id": 11,
@@ -263,16 +282,19 @@ Creates a new investment.
 ## 🐛 Troubleshooting
 
 ### Expo App Shows Errors
+
 - Clear Expo Go app data: Settings → Apps → Expo Go → Storage → Clear Data
 - Force stop and restart Expo Go
 - Rescan QR code
 
 ### Backend Connection Issues
+
 - Verify MySQL is running: `mysql -u root -p`
 - Check .env file has correct DB_PASSWORD
 - Ensure port 3000 is not in use
 
 ### Node Version Issues
+
 - Expo SDK 50 requires Node v20 LTS
 - Check version: `node --version`
 - Should show v20.18.1

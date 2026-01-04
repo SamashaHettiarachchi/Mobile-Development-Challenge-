@@ -11,7 +11,9 @@ interface InvestmentItemProps {
  * Displays farmer name, amount, crop, and creation date
  */
 export function InvestmentItem({ investment }: InvestmentItemProps) {
-  const formattedAmount = `Rs. ${new Intl.NumberFormat("en-LK").format(investment.amount)}`;
+  const formattedAmount = `Rs. ${new Intl.NumberFormat("en-LK").format(
+    investment.amount
+  )}`;
 
   const formattedDate = new Date(investment.created_at).toLocaleDateString(
     "en-US",
